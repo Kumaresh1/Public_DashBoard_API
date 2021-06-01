@@ -16,6 +16,7 @@ const userSchema = mongoose.Schema({
     City: {type: String},
     State: {type: String},
     Pincode : {type: Number}
-})
+},  { collection: 'Governmentsignup'}
+)
 
 module.exports = mongoose.model('user', userSchema)

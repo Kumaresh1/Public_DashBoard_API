@@ -13,7 +13,8 @@ const userRoutes = require('./routes/user')
 })*/
 mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/governmentdashboard',
     { useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
+      useCreateIndex:true
 })
 .catch(err => console.log(err))
 
