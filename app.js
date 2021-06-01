@@ -11,7 +11,7 @@ const userRoutes = require('./routes/user')
     { useNewUrlParser: true,
       useUnifiedTopology: true
 })*/
-mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/test',
+mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/governmentdashboard',
     { useNewUrlParser: true,
       useUnifiedTopology: true
 })
