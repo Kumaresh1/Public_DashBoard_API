@@ -6,12 +6,14 @@ const mongoose = require ('mongoose')
 
 const productRoutes= require('./routes/product')
 const userRoutes = require('./routes/user')
-
-/*mongoose.connect('mongodb+srv://Ishanuj99:ywWy2JhnS6kwJ7k@cluster0.v76sp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+/*
+mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/Publicdashboard',
     { useNewUrlParser: true,
-      useUnifiedTopology: true
-})*/
-mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/governmentdashboard',
+      useUnifiedTopology: true,
+      useCreateIndex:true
+})
+*/
+mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/Publicdashboard',
     { useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex:true

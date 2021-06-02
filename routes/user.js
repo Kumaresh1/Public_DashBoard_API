@@ -25,16 +25,13 @@ router.post("/signup", (req, res, next) => {
               _id: new mongoose.Types.ObjectId(),
               User_Id: req.body.User_Id,
               First_Name: req.body.First_Name,
-              Last_Name: req.body.Last_Name,              
+              Last_name: req.body.Last_name,              
               email: req.body.email,
               password: hash,
-              Designation: req.body.Designation,
-              Department: req.body.Department,
-              Employee_code: req.body.Employee_code,
-              Office_Address:req.body.Office_Address,
+              Address:req.body.Address,
               City:req.body.City,
               State:req.body.State,
-              Pincode:req.body.Pincode
+              Zip:req.body.Zip
             });
             user
               .save()
