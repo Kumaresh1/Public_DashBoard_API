@@ -1,25 +1,27 @@
 const express= require('express')
 const router = express.Router()
 const mongoose=require('mongoose')
+const stats = require('../models/stats')
 
-const Profile = require("../models/products")
+const Profile = require("../models/stats")
 router.get('/', (req, res, next)=>
 {
     Profile.find()
-    .select('name age _id')
     .exec()
     .then(docs =>{
         const response = {
             count: docs.length,
-            products: docs.map(doc =>{
+            stats: docs.map(doc =>{
                 return {
-                    name:doc.name,
-                    age: doc.age,
                     _id:doc.id,
-                    request: {
-                        type: "GET",
-                        url: "http://localhost:3000/product/"+doc._id
-                    }
+                    State:doc.State,
+                    Population: doc.Population,
+                    Confirmed:doc.Confirmed,
+                    Recovered:doc.Recovered,
+                    Deaths: doc.Deaths,
+                    Active: doc.Active,
+                    Tested: doc.Tested,
+                    Last_Updated_Time:doc.Last_Updated_Time,
                 }
             })
         }
@@ -33,7 +35,6 @@ router.get('/', (req, res, next)=>
         })
     })
 })
-
 router.post('/', (req, res, next)=>
 {
     const person = new Profile({
@@ -57,34 +58,15 @@ router.post('/', (req, res, next)=>
     
 })
 
-router.get('/:personId', (req,res,next)=>{
-    const id = req.params.personId
-    Profile.findById(id)
-    .exec()
-    .then(doc => {
-        console.log("From database",doc)
-        if(doc){
-            res.status(200).json(doc)
-        }
-        else{
-            res.status(404).json({message: "No valid entry found for provided id"})
-        }
-        res.status(200).json(doc)
-    })
-    .catch(err => {
-        console.log(err)
-        res.status(500).json({error:err})
-    }) 
-})
-
+/*
 router.patch('/:personId', (err,req,res,next)=>{
-    const id = req.params.productsId
+    const id = req.params.statsId
     const updateOps ={}
     for(const ops of req.body)
     {
         updateOps[ops.propName] = ops.value
     }
-    Product.update({ _id:id}, { $set : updateOps})
+    Stats.update({ _id:id}, { $set : updateOps})
     .exec()
     .then( result=> {
         console.log(result)
@@ -112,4 +94,6 @@ router.delete('/:personId', (req,res,next)=>{
         })
     })    
 })
+*/
+
 module.exports = router;

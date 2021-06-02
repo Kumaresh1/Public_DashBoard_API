@@ -1,3 +1,4 @@
+  
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
@@ -25,13 +26,16 @@ router.post("/signup", (req, res, next) => {
               _id: new mongoose.Types.ObjectId(),
               User_Id: req.body.User_Id,
               First_Name: req.body.First_Name,
-              Last_name: req.body.Last_name,              
+              Last_Name: req.body.Last_Name,              
               email: req.body.email,
               password: hash,
-              Address:req.body.Address,
+              Designation: req.body.Designation,
+              Department: req.body.Department,
+              Employee_code: req.body.Employee_code,
+              Office_Address:req.body.Office_Address,
               City:req.body.City,
               State:req.body.State,
-              Zip:req.body.Zip
+              Pincode:req.body.Pincode
             });
             user
               .save()

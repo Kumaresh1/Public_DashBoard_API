@@ -4,16 +4,10 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const mongoose = require ('mongoose')
 
-const productRoutes= require('./routes/product')
+const statsRoutes= require('./routes/stats')
 const userRoutes = require('./routes/user')
-/*
-mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/Publicdashboard',
-    { useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex:true
-})
-*/
-mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/Publicdashboard',
+
+mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/governmentdashboard',
     { useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex:true
@@ -40,7 +34,7 @@ app.use((req,res,next) => {
     })
 
 //Routes which should handle requests
-app.use('/product', productRoutes)
+app.use('/stats', statsRoutes)
 app.use("/user",userRoutes)
 
 //Handling error requests
