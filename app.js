@@ -3,9 +3,12 @@ const app = express()
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const mongoose = require ('mongoose')
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
 
 const statsRoutes= require('./routes/stats')
 const userRoutes = require('./routes/user')
+
 
 mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/governmentdashboard',
     { useNewUrlParser: true,
