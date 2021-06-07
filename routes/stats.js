@@ -2,9 +2,11 @@ const express= require('express')
 const router = express.Router()
 const mongoose=require('mongoose')
 const stats = require('../models/stats')
+const passport = require('passport');
+require('../passport')
 
 const Profile = require("../models/stats")
-router.get('/', (req, res, next)=>
+router.get('/', passport.authenticate('jwt', {session:false}),(req, res, next)=>
 {
     Profile.find()
     .exec()
@@ -35,7 +37,7 @@ router.get('/', (req, res, next)=>
         })
     })
 })
-router.post('/', (req, res, next)=>
+router.post('/', passport.authenticate('jwt', {session:false}), (req, res, next)=>
 {
     const person = new Profile({
         _id: new mongoose.Types.ObjectId(),
