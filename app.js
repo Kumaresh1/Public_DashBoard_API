@@ -10,7 +10,7 @@ const statsRoutes= require('./routes/stats')
 const userRoutes = require('./routes/user')
 
 
-mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/governmentdashboard',
+mongoose.connect('mongodb+srv://dbmongo19:arisha1234@covidhealthdatabase.6ds4n.mongodb.net/Publicdashboard',
     { useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex:true

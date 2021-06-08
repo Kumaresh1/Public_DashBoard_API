@@ -16,14 +16,12 @@ router.get('/', passport.authenticate('jwt', {session:false}),(req, res, next)=>
             stats: docs.map(doc =>{
                 return {
                     _id:doc.id,
-                    State:doc.State,
-                    Population: doc.Population,
-                    Confirmed:doc.Confirmed,
+                    Country:doc.Country,
+                    State: doc.State,
+                    District:doc.District,
                     Recovered:doc.Recovered,
-                    Deaths: doc.Deaths,
-                    Active: doc.Active,
-                    Tested: doc.Tested,
-                    Last_Updated_Time:doc.Last_Updated_Time,
+                    Area: doc.Area,
+                    Landmark: doc.Landmark,
                 }
             })
         }
