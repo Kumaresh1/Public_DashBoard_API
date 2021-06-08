@@ -21,6 +21,7 @@ router.post('/signup', (req, res) => {
   const {username, password} = req.body;
   User.findOne({username}, (err, user) => {
       if(err) {
+        console.log(err)
           res.status(500).json({message: {msgBody: "Error has occured", msgError: true}})
       }
       if(user) {
