@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
     username: {type:String, unique:true},
     First_Name: {type: String},
     Last_name: {type:String},
+    Mobile_No:{type:Number},
     email: {type:String, 
             unique:true, 
             match:/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/},
